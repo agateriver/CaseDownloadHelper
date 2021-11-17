@@ -5,16 +5,6 @@ var downCaseAttach = ""
 var casePDFUrl = ""
 
 chrome.storage.sync.get(null, function(data) {
-    if (typeof data.rules === 'undefined') {
-        chrome.storage.sync.set({
-            rules: []
-        });
-
-        ruleSet = [];
-    } else {
-        ruleSet = data.rules;
-    }
-
     if (typeof data.caseDownloadStatus === 'undefined') {
         chrome.storage.sync.set({
             caseDownloadStatus: 1

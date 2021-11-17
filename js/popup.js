@@ -16,8 +16,12 @@ function init_main() {
         //make the switch reflect our current state
         if (isEnabled) {
             $('#caseDownloadStatus').bootstrapSwitch('state', true);
+            // TODO: set normal icon
+            chrome.action.setIcon()
+
         } else {
             $('#caseDownloadStatus').bootstrapSwitch('state', false);
+            // TODO: set gray icon
         }
     });
 
