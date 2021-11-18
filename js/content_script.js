@@ -1,4 +1,4 @@
-var ruleSet;
+var loginStatus = false;
 var viewCaseFile = ""
 var viewCaseGuid = ""
 var downCaseAttach = ""
@@ -35,7 +35,7 @@ function walk(node) {
                     var el = document.getElementsByClassName("portlet_title")[0]
                     caseTitle = el.innerText;
                     el.innerHTML = '<a href="' +
-                        casePDFUrl + '">点击下载《' + caseTitle + '》 </a>';
+                        casePDFUrl + '" download="' + caseTitle + '.pdf" > 点击下载《 ' + caseTitle + '》 </a>';
                 };
             }
         case 9:
@@ -82,12 +82,29 @@ function handleText(textNode) {
             console.log("downCaseAttach: " + downCaseAttach);
         }
     }
+    if (v === "退出" && textNode.parentNode.nodeName === 'A') {
+        loginStatus = true;
+    }
     if (v === "案例正文" && textNode.parentNode.nodeName === 'A') {
-        var el = textNode.parentNode;
-        el.style.display = "none";
-        var link = document.createElement('a');
-        link.innerText = " 案例正文 "
-        link.href = viewCaseFile;
-        el.parentNode.append(link);
+        if (loginStatus) {
+            var el = textNode.parentNode;
+            el.style.display = "none";
+            var link = document.createElement('a');
+            link.innerText = " 案例正文 "
+
+            link.href = viewCaseFile;
+            el.parentNode.append(link);
+        }
+    }
+    if (v === "案例说明书" && textNode.parentNode.nodeName === 'A') {
+        if (loginStatus) {
+            var el = textNode.parentNode;
+            el.style.display = "none";
+            var link = document.createElement('a');
+            link.innerText = " 案例说明书 "
+
+            link.href = viewCaseGuid;
+            el.parentNode.append(link);
+        }
     }
 }
