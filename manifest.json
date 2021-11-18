@@ -1,7 +1,7 @@
 {
     "name": "CaseDownloadHelper",
     "description": "某网案例下载助手",
-    "version": "0.1.0",
+    "version": "2021.11.18",
     "manifest_version": 3,
     "permissions": [
         "storage"
