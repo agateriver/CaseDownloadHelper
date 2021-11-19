@@ -1,8 +1,9 @@
 {
-    "name": "CaseDownloadHelper",
-    "description": "某网案例下载助手",
+    "name": "__MSG_extensionName__",
+    "description": "__MSG_extensionDescription__",
     "version": "2021.11.18",
     "manifest_version": 3,
+    "default_locale": "en_US",
     "permissions": [
         "storage"
     ],
