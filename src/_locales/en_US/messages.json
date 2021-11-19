@@ -1,0 +1,10 @@
+{
+    "extensionName": {
+        "description": "the name of the extension",
+        "message": "CaseDownloadHelper"
+    },
+    "extensionDescription": {
+        "description": "the description of the extension",
+        "message": "Case Download Helper for China Professional-degree Case Center"
+    }
+}
